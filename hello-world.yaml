@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: hello-world-ns
+  name: hello-world-ns-2
 
 ---
 
@@ -11,7 +11,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-world
-  namespace: hello-world-ns
+  namespace: hello-world-ns-2
 spec:
   replicas: 2
   selector:
@@ -35,7 +35,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-helloworld
-  namespace: hello-world-ns
+  namespace: hello-world-ns-2
 spec:
   type: ClusterIP
   selector:
@@ -50,7 +50,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ing-helloworld
-  namespace: hello-world-ns
+  namespace: hello-world-ns-2
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
   labels:
